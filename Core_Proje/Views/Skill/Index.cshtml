@@ -1,0 +1,46 @@
+﻿@using EntityLayer.Concrete
+@model List<Skill>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<div class="card-header border-0 d-flex justify-content-between align-items-center">
+    <h3 class="mb-2">Yetenek Listesi</h3>
+    <a href="/Skill/AddSkill" class="btn btn-info">Yetenek Ekle</a>
+</div>
+<!-- Light table -->
+<div class="table-responsive">
+    <table class="table align-items-center table-flush">
+        <thead class="thead-light">
+            <tr>
+                <th scope="col" class="sort" data-sort="name">#</th>
+                <th scope="col" class="sort" data-sort="budget">Başlık</th>
+                <th scope="col" class="sort" data-sort="budget">Düzenle</th>
+                <th scope="col" class="sort" data-sort="budget">Sil</th>
+            </tr>
+        </thead>
+        <tbody class="list">
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <th scope="row">
+                        <div class="media align-items-center">
+                            <div class="media-body">
+                                <span class="name mb-0 text-sm">@item.SkillID</span>
+                            </div>
+                        </div>
+                    </th>
+                    <td class="budget">
+                        @item.Title
+                    </td>
+                    <td>
+                        <a href="/Skill/EditSkill/@item.SkillID" class="btn btn-warning">Düzenle</a>
+                    </td>
+                    <td>
+                        <a href="/Skill/DeleteSkill/@item.SkillID" class="btn btn-danger">Sil</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,27 @@
+﻿@{
+    ViewData["Title"] = "AddEducation";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<br />
+<br />
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <form method="post">
+                <div class="mb-3">
+                    <input type="text" class="form-control" id="name" name="Name" placeholder="Eğitim Adı" />
+                </div>
+                <div class="mb-3">
+                    <input type="text" class="form-control" id="date" name="Date" placeholder="Tarih" />
+                </div>
+                <div class="mb-3">
+                    <input type="text" class="form-control" id="imageURL" name="ImageURL" placeholder="Image URL" />
+                </div>
+                <div class="mb-3">
+                    <input type="text" class="form-control" id="description" name="Description" placeholder="Açıklama" />
+                </div>
+                <button type="submit" class="btn btn-primary">Kaydet</button>
+            </form>
+        </div>
+    </div>
+</div>

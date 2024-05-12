@@ -34,5 +34,9 @@ namespace Core_Proje.Controllers
             messageManager.TAdd(p);
             return RedirectToAction("Index","Default");
         }
+        public PartialViewResult FooterPartial()
+        {
+            return PartialView();
+        }
     }
 }
