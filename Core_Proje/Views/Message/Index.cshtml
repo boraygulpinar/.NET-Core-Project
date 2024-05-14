@@ -1,0 +1,57 @@
+﻿@using EntityLayer.Concrete
+@model List<Message>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="card-header border-0 d-flex justify-content-between align-items-center">
+    <h3 class="mb-2">Mesaj Listesi</h3>
+</div>
+<!-- Light table -->
+<div class="table-responsive">
+    <table class="table align-items-center table-flush">
+        <thead class="thead-light">
+            <tr>
+                <th scope="col" class="sort" data-sort="name">#</th>
+                <th scope="col" class="sort" data-sort="budget">Name</th>
+                <th scope="col" class="sort" data-sort="budget">Mail</th>
+                <th scope="col" class="sort" data-sort="budget">Content</th>
+                <th scope="col" class="sort" data-sort="budget">Date</th>
+            </tr>
+        </thead>
+        <tbody class="list">
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <th scope="row">
+                        <div class="media align-items-center">
+                            <div class="media-body">
+                                <span class="name mb-0 text-sm">@item.MessageID</span>
+                            </div>
+                        </div>
+                    </th>
+                    <td class="budget">
+                        @item.Name
+                    </td>
+                    <td class="budget">
+                        @item.Mail
+                    </td>
+                    <td class="budget">
+                        @item.Content
+                    </td>
+                    <td class="budget">
+                        @item.Date
+                    </td>
+                    <td class="budget">
+                        @item.Status
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+
+

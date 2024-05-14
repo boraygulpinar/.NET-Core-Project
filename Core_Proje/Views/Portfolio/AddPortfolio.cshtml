@@ -1,0 +1,32 @@
+﻿@model EntityLayer.Concrete.Portfolio
+@{
+    ViewData["Title"] = "AddEducation";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<br />
+<br />
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <form method="post">
+                <div class="mb-3">
+                    <input type="text" class="form-control" id="name" name="Name" placeholder="Proje Adı" />
+                    @Html.ValidationMessageFor(x=>x.Name)
+                </div>
+                <div class="mb-3">
+                    <input type="text" class="form-control" id="imageURL" name="ImageURL" placeholder="Image URL" />
+                    @Html.ValidationMessageFor(x => x.ImageURL)
+                </div>
+                <div class="mb-3">
+                    <input type="text" class="form-control" id="imageURL2" name="ImageURL2" placeholder="Image URL 2" />
+                    @Html.ValidationMessageFor(x => x.ImageURL2)
+                </div>
+                <div class="mb-3">
+                    <input type="text" class="form-control" id="projectURL" name="ProjectURL" placeholder="Project URL" />
+                    @Html.ValidationMessageFor(x => x.ProjectURL)
+                </div>
+                <button type="submit" class="btn btn-primary">Kaydet</button>
+            </form>
+        </div>
+    </div>
+</div>
